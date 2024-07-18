@@ -1,0 +1,5 @@
+@import '../../style/components';
+
+:host {
+  @include toolbar-page;
+}

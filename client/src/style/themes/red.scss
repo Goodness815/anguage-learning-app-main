@@ -1,0 +1,10 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+$_primary-pallet: (
+  800: #EC5547,
+  contrast: map.get(mat.$red-palette, contrast)
+);
+
+$app-primary: mat.define-palette($_primary-pallet, 800);
+$app-accent:  mat.define-palette($_primary-pallet, 800);

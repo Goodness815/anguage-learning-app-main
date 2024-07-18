@@ -1,0 +1,30 @@
+<div class="loading" [class.hidden]="!isLoading || !spinnerVisible">
+  <mat-progress-spinner [diameter]="45" mode="indeterminate"></mat-progress-spinner>
+</div>
+<video autoplay muted playsinline #video (playing)="onVideoPlaying()" (ended)="onVideoEnded()"
+  (timeupdate)="onVideoUpdate($event)" [class.hidden]="!videoStarted || videoComplete" oncanplay="this.play()"
+  onloadedmetadata="this.muted=true">
+  <source [src]="'assets/videos/splash.mp4' | assetUrl" type="video/mp4" />
+</video>
+<div class="logos">
+  <app-animation class="app-logo" #logoAnimation [class.hidden]="!logosVisible" [autoplay]="false"
+    [sourcePath]="'assets/animations/logo/data.json' | assetUrl"></app-animation>
+</div>
+<ul class="credits" [class.hidden]="!logosVisible">
+  <li class="arts-culture-logo"><img [src]="'assets/img/google_arts_culture_logo.png' | assetUrl" alt="" /></li>
+  <li>Associazione Ellenofona Jalò tu Vua</li>
+  <li>Cademia Siciliana</li>
+  <li>Congres Mondial Amazigh</li>
+  <li>Council of the Elders of Rapa Nui</li>
+  <li>Language Landscape</li>
+  <li>Museum of Ethnic Cultures at Minzu University</li>
+  <li>National Yiddish Theatre</li>
+  <li>Te Murumāra Foundation</li>
+  <li>Yugambeh Museum</li>
+  <li>UNESCO International Decade of Indigenous Languages Secretariat</li>
+  <li>University of Newcastle</li>
+  <li>Barona Cultural Centre & Museum</li>
+  <li>Instituto Nacional de Lenguas Indígenas</li>
+  <li>Citizen Potawatomi Nation, USA</li>
+  <li>Friedrich Schürr Institute</li>
+</ul>
